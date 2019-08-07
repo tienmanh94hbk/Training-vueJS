@@ -1,19 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import {NavController} from '@ionic/angular';
-import {Router} from '@angular/router';
+// tslint:disable-next-line:import-spacing
+import{Component, OnInit}from '@angular/core';
+// tslint:disable-next-line:import-spacing
+import {HttpClient}from '@angular/common/http';
 
 @Component({
   selector: 'app-list-post',
   templateUrl: './list-post.page.html',
   styleUrls: ['./list-post.page.scss'],
 })
+
 export class ListPostPage implements OnInit {
+  constructor(public http: HttpClient) { }
+  url = 'https://jsonplaceholder.typicode.com/posts';
+  public thePosts: any;
+  isSelectedId: number;
 
-  constructor(public navCtrl: NavController, private router: Router) { }
-  nextPage() {
-    this.router.navigateByUrl('/post-detail');
-  }
   ngOnInit() {
+    this.http.get(this.url).subscribe(data =>{
+      this.thePosts = data;
+    });
   }
 
+  setClick(i: number) {
+    this.isSelectedId = i;
+  }
 }

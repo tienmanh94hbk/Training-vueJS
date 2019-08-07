@@ -5,10 +5,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </ion-header>
 
 <ion-content>
-  <div style="text-align: center">
-    <ion-button name="ion-button" (click)="nextPage()" type="button">Click to Page2</ion-button>
-  </div>
+  <ion-list>
+    <div *ngFor="let item of thePosts; let i = index" >
+      <ion-item *ngIf="item.id <50"  (click)="setClick(i)">
+        <div [ngClass]="i%2==0 ? 'bg-yellow':'bg-green'" [class.bg-grey]="i===isSelectedId">
+          <p>{{item.id}} - {{item.title}}</p>
+        </div>
+      </ion-item>
+    </div>
+  </ion-list>
+
 </ion-content>
+

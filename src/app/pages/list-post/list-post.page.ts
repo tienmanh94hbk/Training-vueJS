@@ -1,7 +1,5 @@
-// tslint:disable-next-line:import-spacing
-import{Component, OnInit}from '@angular/core';
-// tslint:disable-next-line:import-spacing
-import {HttpClient}from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-list-post',
@@ -9,14 +7,14 @@ import {HttpClient}from '@angular/common/http';
   styleUrls: ['./list-post.page.scss'],
 })
 
-export class ListPostPage implements OnInit {
+  export class ListPostPage implements OnInit {
   constructor(public http: HttpClient) { }
   url = 'https://jsonplaceholder.typicode.com/posts';
   public thePosts: any;
   isSelectedId: number;
 
   ngOnInit() {
-    this.http.get(this.url).subscribe(data =>{
+    this.http.get(this.url).subscribe(data => {
       this.thePosts = data;
     });
   }

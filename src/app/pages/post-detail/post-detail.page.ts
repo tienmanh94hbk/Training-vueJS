@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavController} from '@ionic/angular';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {User} from '../../models/User';
 
 @Component({
   selector: 'app-post-detail',
@@ -8,12 +9,21 @@ import {Router} from '@angular/router';
   styleUrls: ['./post-detail.page.scss'],
 })
 export class PostDetailPage implements OnInit {
-
-  constructor(public navCtrl: NavController, private router: Router) { }
+  data: User;
+  constructor(public navCtrl: NavController, private router: Router, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.data = this.router.getCurrentNavigation().extras.state.item;
+      }
+    });
+  }
   backPage() {
     this.router.navigateByUrl('/list-post');
   }
   ngOnInit() {
+    if (this.route.snapshot.data.special) {
+      this.data = this.route.snapshot.data.special;
+    }
   }
 
 }

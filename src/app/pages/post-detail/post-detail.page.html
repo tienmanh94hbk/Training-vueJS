@@ -6,8 +6,9 @@
 
 <ion-content>
   <p style="text-align: center; color: black; font-size: 100px">POST DETAIL PAGE</p>
-  <div style="text-align: center">
-    <ion-button (click)="backPage()">Back List-post</ion-button>
-  </div>
-  <app-post> </app-post>
+  <ion-list *ngIf="data">
+    <ion-item>User Id : {{data.userId}} </ion-item>
+    <ion-item>Title : {{data.title}}</ion-item>
+    <ion-item>Body : {{data.body}}</ion-item>
+  </ion-list>
 </ion-content>

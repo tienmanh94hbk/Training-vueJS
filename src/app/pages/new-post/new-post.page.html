@@ -43,9 +43,10 @@
     </div>
 
     <ion-item>
-      <ion-input type="text" formControlName="body"  placeholder="Body"></ion-input>
+      <ion-input type="text" formControlName="body"  placeholder="Body" appRuleInput></ion-input>
     </ion-item>
 
       <ion-button (click)="saveForm()" class="button" [disabled]="!postForm.valid" color="primary" size="default" type="submit">Save</ion-button>
   </form>
+
 </ion-content>

@@ -19,6 +19,8 @@ import {ComponentsModule} from './components/components.module';
     SplashScreen,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

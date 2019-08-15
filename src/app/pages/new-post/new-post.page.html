@@ -7,7 +7,7 @@
 <ion-content>
   <form [formGroup]="postForm" >
     <ion-item>
-      <ion-input type="tel" formControlName="userId"  placeholder="UserId" [(ngModel)]="postObject.userId"></ion-input>
+      <ion-input type="text" formControlName="userId"  placeholder="UserId" [(ngModel)]="postObject.userId" appRuleInput></ion-input>
     </ion-item>
 
     <div>
@@ -19,7 +19,7 @@
     </div>
 
     <ion-item>
-      <ion-input type="tel" formControlName="id"  placeholder="Id" [(ngModel)]="postObject.id"></ion-input>
+      <ion-input type="text" formControlName="id"  placeholder="Id" [(ngModel)]="postObject.id" appRuleInput></ion-input>
     </ion-item>
 
     <div>
@@ -43,7 +43,7 @@
     </div>
 
     <ion-item>
-      <ion-input type="text" formControlName="body"  placeholder="Body" appRuleInput></ion-input>
+      <ion-input type="text" formControlName="body"  placeholder="Body" ></ion-input>
     </ion-item>
 
       <ion-button (click)="saveForm()" class="button" [disabled]="!postForm.valid" color="primary" size="default" type="submit">Save</ion-button>

@@ -1,0 +1,9 @@
+<ion-list>
+  <div *ngFor="let item of thePosts; let i = index" [id]="item.id" >
+    <ion-item *ngIf="item.id <50"  (click)="sendItem(item)">
+      <div [ngClass]="i%2==0 ? 'bg-yellow':'bg-green'">
+        <p>{{item.id}} - {{item.title}}</p>
+      </div>
+    </ion-item>
+  </div>
+</ion-list>

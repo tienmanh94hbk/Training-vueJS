@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>NewPost</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="postForm" >
+    <ion-item>
+      <ion-input type="text" formControlName="userId"  placeholder="UserId" [(ngModel)]="postObject.userId" appRuleInput></ion-input>
+    </ion-item>
+
+    <div>
+      <ng-container *ngFor="let error of error_mess.userId">
+        <div class="error-messages" *ngIf="postForm.get('userId').hasError(error.type) && (postForm.get('userId').dirty || postForm.get('userId').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-input type="text" formControlName="id"  placeholder="Id" [(ngModel)]="postObject.id" appRuleInput></ion-input>
+    </ion-item>
+
+    <div>
+      <ng-container *ngFor="let error of error_mess.id">
+        <div class="error-messages" *ngIf="postForm.get('id').hasError(error.type) && (postForm.get('id').dirty || postForm.get('id').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-input type="text" formControlName="title"  placeholder="Title" [(ngModel)]="postObject.title"></ion-input>
+    </ion-item>
+
+    <div>
+      <ng-container *ngFor="let error of error_mess.title">
+        <div class="error-messages" *ngIf="postForm.get('title').hasError(error.type) && (postForm.get('title').dirty || postForm.get('title').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-input type="text" formControlName="body"  placeholder="Body" ></ion-input>
+    </ion-item>
+
+      <ion-button (click)="saveForm()" class="button" [disabled]="!postForm.valid" color="primary" size="default" type="submit">Save</ion-button>
+  </form>
+
+</ion-content>

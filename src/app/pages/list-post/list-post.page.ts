@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {NavController} from '@ionic/angular';
+import { Component} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -7,13 +6,12 @@ import {Router} from '@angular/router';
   templateUrl: './list-post.page.html',
   styleUrls: ['./list-post.page.scss'],
 })
-export class ListPostPage implements OnInit {
+export class ListPostPage {
 
-  constructor(public navCtrl: NavController, private router: Router) { }
+  constructor( private router: Router) { }
   nextPage() {
     this.router.navigateByUrl('/post-detail');
   }
-  ngOnInit() {
-  }
+
 
 }

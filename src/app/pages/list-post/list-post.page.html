@@ -2,9 +2,6 @@
   <ion-toolbar>
     <ion-title>LIST-POST</ion-title>
   </ion-toolbar>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </ion-header>
 
@@ -12,8 +9,8 @@
   <ion-list>
     <div *ngFor="let item of thePosts; let i = index" >
       <ion-item *ngIf="item.id <50"  (click)="setClick(i)">
-        <div [ngClass]="i%2==0 ? 'bg-yellow':'bg-green'" [class.bg-grey]="i===isSelectedId">
-          <p>{{item.id}} - {{item.title}}</p>
+        <div [ngClass]="i%2==0 ? 'bg-green':'bg-yellow'" [class.bg-grey]="i===isSelectedId">
+          <p>Id :{{item.id}} - Title: {{item.title}}</p>
         </div>
       </ion-item>
     </div>

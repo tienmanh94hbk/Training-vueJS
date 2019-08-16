@@ -10,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
   export class ListPostPage implements OnInit {
   constructor(public http: HttpClient) { }
   url = 'https://jsonplaceholder.typicode.com/posts';
-  public thePosts: any;
+  thePosts: any;
   isSelectedId: number;
 
   ngOnInit() {

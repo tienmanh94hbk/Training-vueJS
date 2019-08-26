@@ -12,13 +12,13 @@ export class ListPostPage implements OnInit {
 
     url = 'https://jsonplaceholder.typicode.com/posts';
     public thePosts: any;
-
     public list;
 
     constructor(private router: Router, private activatedRoute: ActivatedRoute, public http: HttpClient) {
         this.activatedRoute.queryParams.subscribe(res => {
             if (res && res.value) {
                 this.list = JSON.parse(res.value);
+                console.log(this.list);
                 this.insertDataToList(this.list);
             }
         });
@@ -27,14 +27,14 @@ export class ListPostPage implements OnInit {
     ngOnInit() {
         this.http.get(this.url).subscribe(data => {
             this.thePosts = data;
+            this.insertDataToList(this.thePosts);
         });
     }
 
     newPost() {
         this.router.navigateByUrl('/new-post').then();
     }
-
     insertDataToList(data) {
-        this.thePosts.unshift(data);
+       this.thePosts.unshift(this.list);
     }
 }

@@ -17,9 +17,6 @@ export class PostDetailPage implements OnInit {
       }
     });
   }
-  backPage() {
-    this.router.navigateByUrl('/list-post');
-  }
   ngOnInit() {
     if (this.route.snapshot.data.special) {
       this.data = this.route.snapshot.data.special;

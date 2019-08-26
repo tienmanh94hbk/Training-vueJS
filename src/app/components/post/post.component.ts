@@ -10,7 +10,6 @@ import {NavigationExtras, Router} from '@angular/router';
 export class PostComponent implements OnInit {
   url = 'https://jsonplaceholder.typicode.com/posts';
   public thePosts: any;
-  id: string;
   constructor(public http: HttpClient, private router: Router) { }
 
   ngOnInit() {

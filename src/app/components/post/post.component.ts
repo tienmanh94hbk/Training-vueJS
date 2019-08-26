@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
 })
-export class PostComponent implements OnInit {
+  export class PostComponent implements OnInit {
   url = 'https://jsonplaceholder.typicode.com/posts';
   public thePosts: any;
   isSelectedId: number;

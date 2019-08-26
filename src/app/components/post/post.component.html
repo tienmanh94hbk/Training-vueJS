@@ -2,7 +2,7 @@
   <div *ngFor="let item of thePosts; let i = index" >
     <ion-item *ngIf="item.id <50"  (click)="setClick(i)">
       <div [ngClass]="i%2==0 ? 'bg-yellow':'bg-green'" [class.bg-grey]="i===isSelectedId">
-        <p>{{item.id}} - {{item.title}}</p>
+        <p>ID :{{item.id}} - TITLE : {{item.title}}</p>
       </div>
     </ion-item>
   </div>

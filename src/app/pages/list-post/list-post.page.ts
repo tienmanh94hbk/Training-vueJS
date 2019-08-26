@@ -18,7 +18,6 @@ export class ListPostPage implements OnInit {
         this.activatedRoute.queryParams.subscribe(res => {
             if (res && res.value) {
                 this.list = JSON.parse(res.value);
-                console.log(this.list);
                 this.insertDataToList(this.list);
             }
         });

@@ -1,19 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {NavController} from '@ionic/angular';
-import {Router} from '@angular/router';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.page.html',
   styleUrls: ['./post-detail.page.scss'],
 })
-export class PostDetailPage implements OnInit {
+export class PostDetailPage {
 
-  constructor(public navCtrl: NavController, private router: Router) { }
-  backPage() {
-    this.router.navigateByUrl('/list-post');
-  }
-  ngOnInit() {
-  }
+  constructor() { }
 
 }

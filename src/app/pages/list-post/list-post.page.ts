@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-list-post',
@@ -6,8 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./list-post.page.scss'],
 })
 
-  export class ListPostPage implements OnInit {
-  constructor() { }
-
-  ngOnInit() {}
+  export class ListPostPage {
+  constructor() {
+  }
 }
+

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>POST-DETAIL</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p class="title">POST DETAIL PAGE</p>
+  <ion-list *ngIf="data">
+    <ion-item>User Id : {{data.userId}} </ion-item>
+    <ion-item>Title : {{data.title}}</ion-item>
+    <ion-item>Body : {{data.body}}</ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>LIST-POST</ion-title>
+  </ion-toolbar>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <ion-button (click)="newPost()">New Post</ion-button>
+</ion-header>
+
+<ion-content>
+
+  <app-post [list-data]="thePosts"> </app-post>
+
+</ion-content>
+
